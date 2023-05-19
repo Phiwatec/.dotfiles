@@ -1,0 +1,42 @@
+# Git aliases 
+alias gs='git status'
+alias gc='git commit'
+alias gp='git pull --rebase'
+alias gcam='git commit -am'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+
+# Nice colors :)
+alias ip='ip -c'
+alias ip6='ip -6'
+
+# ls aliases 
+alias lsa='ls -la'
+
+# Add v6 version off nmap command
+alias nmap6='nmap -6'
+
+# Fun
+alias lsd='cmatrix | lolcat'
+
+#Single letter commands for most used commands ( Whitespace after command is important)
+# https://askubuntu.com/questions/22037/aliases-not-available-when-using-sudo
+alias n='nano '
+alias s='sudo '
+alias sctl='systemctl '
+alias ng='nginx'
+
+# Change directories fast
+alias ..='cd ..'
+alias ...='.. && ..'
+
+# Delete a given line number in the known_hosts file.
+knownrm() {
+ re='^[0-9]+$'
+ if ! [[ $1 =~ $re ]] ; then
+   echo "error: line number missing" >&2;
+ else
+   sed -i '' "$1d" ~/.ssh/known_hosts
+ fi
+}
+
+
