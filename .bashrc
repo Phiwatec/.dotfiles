@@ -101,6 +101,9 @@ if [ -f ~/.aliases ]; then
 . ~/.aliases
 fi
 
+if [ -f ~/.aliases.bash ]; then
+. ~/.aliases.bash
+fi
 # Default parameter to send to the "less" command
 # -R: show ANSI colors correctly; -i: case insensitive search
 LESS="-R -i"
