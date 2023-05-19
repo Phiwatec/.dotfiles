@@ -1,3 +1,4 @@
+#!/bin/sh
 # Setup needed in order too link files to correct position
 FILES=( "/etc/passwd" "/etc/group" "/etc/hosts" )
 
