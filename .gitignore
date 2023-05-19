@@ -1,0 +1,5 @@
+*
+!.gitignore
+!.bashrc
+!.aliases
+!.config/fish/config.fish
