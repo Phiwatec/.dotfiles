@@ -1,11 +1,20 @@
 #!/bin/sh
 # Setup needed in order too link files to correct position
-FILES=".bashrc .aliases .config/fish/config.fish" 
-
+FILES=".bashrc .aliases " 
+echo Making softlinks
 #Change to homedir
 cd ~ 
 
-for FILE in FILES
+DIR=".config/fish"
+if [ -d "$DIR" ]; then
+  # Take action if $DIR exists. #
+  echo "Fish config dir exists. Using it too"
+  FILES="${FILES} .config/fish/config.fish"
+fi
+
+
+
+for FILE in $FILES
 do
    if [ -f "$FILE" ]; then
    echo "$FILE already exists. Moving to $FILE.bak"
