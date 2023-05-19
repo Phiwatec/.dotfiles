@@ -1,15 +1,15 @@
 #!/bin/sh
 # Setup needed in order too link files to correct position
-FILES=".bashrc .aliases " 
+FILES=".bashrc .aliases .aliases.bash" 
 echo Making softlinks
 #Change to homedir
 cd ~ 
 
 DIR=".config/fish"
 if [ -d "$DIR" ]; then
-  # Take action if $DIR exists. #
+  # Fish is used
   echo "Fish config dir exists. Using it too"
-  FILES="${FILES} .config/fish/config.fish"
+  FILES="${FILES} .config/fish/config.fish .aliases.fish"
 fi
 
 
@@ -18,9 +18,10 @@ for FILE in $FILES
 do
    if [ -f "$FILE" ]; then
    echo "$FILE already exists. Moving to $FILE.bak"
-   mv $FILE $FILE.bak
+   mv ~/$FILE ~/$FILE.bak
+   
    fi
-   ln -s .dotfiles/$FILE $FILE
+   ln -s ~/.dotfiles/$FILE $FILE
 
 done
 
