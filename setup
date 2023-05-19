@@ -1,0 +1,16 @@
+# Setup needed in order too link files to correct position
+FILES=( "/etc/passwd" "/etc/group" "/etc/hosts" )
+
+#Change to homedir
+cd ~ 
+
+for FILE in FILES
+do
+   if [ -f "$FILE" ]; then
+   echo "$FILE already exists. Moving to $FILE.bak"
+   mv $FILE $FILE.bak
+   fi
+   ln -s .dotfiles/$FILE $FILE
+
+done
+
