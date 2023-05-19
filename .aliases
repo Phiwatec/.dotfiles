@@ -24,6 +24,9 @@ alias n='nano '
 alias s='sudo '
 alias sctl='systemctl '
 alias ng='nginx'
+alias c='cat'
+alias p='python3'
+alias h='htop'
 
 # Change directories fast
 alias ..='cd ..'
