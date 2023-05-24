@@ -9,7 +9,7 @@ function knownrm
   end
 end
 
-
+# You have to add the aliases for the root account in order for this to work
 function sudo -d "sudo wrapper that handles aliases"
     if functions -q -- $argv[1]
         set -l new_args (string join ' ' -- (string escape -- $argv))
