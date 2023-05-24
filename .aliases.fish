@@ -8,3 +8,13 @@ function knownrm
    sed -i "$argv[1]d" ~/.ssh/known_hosts
   end
 end
+
+
+function sudo -d "sudo wrapper that handles aliases"
+    if functions -q -- $argv[1]
+        set -l new_args (string join ' ' -- (string escape -- $argv))
+        set argv fish -c "$new_args"
+    end
+
+    command sudo $argv
+end
