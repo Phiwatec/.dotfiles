@@ -3,3 +3,5 @@
 !.bashrc
 !.aliases
 !.config/fish/config.fish
+!.aliases.fish
+!.aliases.bash
